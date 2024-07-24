@@ -1,1 +1,51 @@
+@import "compass/css3";
 
+body {
+  text-align: center;
+  background: #754e34 url("https://www.marryatvillehotel.com.au/Themes/MarryatvilleTheme/Content/Images/wood-paneling.jpg");
+}
+
+.plate {
+  display: inline-block;
+  width: 40em;
+  height: 25em;
+  background: white;
+  margin: 5em;
+  text-align: left;
+}
+
+/* Plate Styling */
+.plate {
+  $plate-edge: 33px;
+  position: relative;
+  box-sizing: border-box;
+  padding: $plate-edge ($plate-edge + 20);
+  border-radius: 30px;
+  box-shadow: 
+    /* Outer Plate Bevel */
+    inset 0 5px 3px 0 rgba(255,255,255,.5), /* Top */
+    inset 0 -5px 3px 0 rgba(0,0,0,.78), /* Bottom */
+    inset 3px 0 2px 0 rgba(0,0,0,.25), /* Left */
+    inset -3px 0 2px 0 rgba(0,0,0,.25), /* Right */
+    
+    /* Outer Plate Shadow */
+    inset 0 5px 46px 0 rgba(0,0,0,.4),
+    0 5px 13px 0 rgba(0,0,0,.75)
+    ;
+  
+  &:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: $plate-edge;
+    right: $plate-edge;
+    bottom: $plate-edge;
+    left: $plate-edge;
+    border-radius: 20px;
+    box-shadow:
+      /* Inner Plate Shadow */
+      inset 0 0 4px 3px rgba(255,255,255,1), /* Top */
+      inset 0 8px 16px 4px rgba(0,0,0,.25) /* Top */
+      ;
+  }
+}
